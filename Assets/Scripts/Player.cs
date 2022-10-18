@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]float[] lanes;
     int lane = 1;
     [SerializeField] int hp;
+    int score;
 
     public FlickGesture flickGesture;
     private void OnEnable()
@@ -36,12 +37,12 @@ public class Player : MonoBehaviour
         _rb.velocity = new Vector3(0, 0, 1) * _speed;
     }
 
-    public void Damage()
+    public void Damage(int _damage)
     {
         Debug.Log("Damage");
     }
 
-    public void ScoreUP()
+    public void ScoreUP(int _score)
     {
         Debug.Log("ScoreUP");
     }
