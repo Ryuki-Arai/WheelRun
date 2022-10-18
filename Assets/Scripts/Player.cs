@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TouchScript.Gestures;
 using UnityEngine;
+
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +15,16 @@ public class Player : MonoBehaviour
     int lane = 1;
     [SerializeField] int hp;
 
+    public FlickGesture flickGesture;
+    private void OnEnable()
+    {
+        flickGesture.Flicked += OnFlicked;
+    }
+
+    private void OnDisable()
+    {
+        flickGesture.Flicked -= OnFlicked;
+    }
 
     void Start()
     {
@@ -20,8 +33,6 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveLane((int)Input.GetAxisRaw("Horizontal"));
-
         _rb.velocity = new Vector3(0, 0, 1) * _speed;
     }
 
@@ -35,11 +46,17 @@ public class Player : MonoBehaviour
         Debug.Log("ScoreUP");
     }
 
-    void MoveLane(int move)
+    private void OnFlicked(object sender, EventArgs e)
     {
+        MoveLane(flickGesture.ScreenFlickVector);
+    }
+    void MoveLane(Vector2 moveVec)
+    {
+        var move = moveVec.x;
         if (lane <= 0 && move < 0) return;
         if (lane >= lanes.Length - 1 && move > 0) return;
-        lane += move;
+        if (move < 0) lane--;
+        else if (move > 0) lane++;
         gameObject.transform.position = new Vector3(lanes[lane], gameObject.transform.position.y, gameObject.transform.position.z);
     }
 }
