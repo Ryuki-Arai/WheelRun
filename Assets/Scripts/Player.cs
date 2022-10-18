@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public int Balance => balance;
     [SerializeField]float[] lanes;
     int lane = 1;
+    [SerializeField] int hp;
+
 
     void Start()
     {
@@ -21,6 +23,16 @@ public class Player : MonoBehaviour
         MoveLane((int)Input.GetAxisRaw("Horizontal"));
 
         _rb.velocity = new Vector3(0, 0, 1) * _speed;
+    }
+
+    public void Damage()
+    {
+        Debug.Log("Damage");
+    }
+
+    public void ScoreUP()
+    {
+        Debug.Log("ScoreUP");
     }
 
     void MoveLane(int move)
