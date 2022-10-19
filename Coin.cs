@@ -5,8 +5,5 @@ using UnityEngine.Events;
 
 public class Coin : ObjectBase
 {
-    public override void Action()
-    {
-        Destroy(gameObject);
-    }
+    
 }

@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]float[] lanes;
     int lane = 1;
     [SerializeField] int hp;
-    int score;
+    int score = 0;
 
     public FlickGesture flickGesture;
     private void OnEnable()
@@ -40,11 +40,13 @@ public class Player : MonoBehaviour
     public void Damage(int _damage)
     {
         Debug.Log("Damage");
+        hp -= _damage;
     }
 
     public void ScoreUP(int _score)
     {
         Debug.Log("ScoreUP");
+        score += _score;
     }
 
     private void OnFlicked(object sender, EventArgs e)

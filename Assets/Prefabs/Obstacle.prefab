@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6936025873521019214}
   - component: {fileID: 6936025873521019215}
   - component: {fileID: 6936025873521019212}
-  - component: {fileID: 6936025873521019213}
+  - component: {fileID: 3115998696996369324}
   - component: {fileID: 6936025873521019210}
   - component: {fileID: 6936025873521019211}
   m_Layer: 0
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6936025873521019213
+--- !u!114 &3115998696996369324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,20 +95,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6936025873521019208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c892d0f376c4cce478277acc3acd2c62, type: 3}
+  m_Script: {fileID: 11500000, guid: b06a0e19a6720f541a5e11812ae1009b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
