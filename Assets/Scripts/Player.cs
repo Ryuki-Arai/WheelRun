@@ -1,20 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using TouchScript.Gestures;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] int _speed = 5;
     Rigidbody _rb;
-    int balance = 0;
-    public int Balance => balance;
     [SerializeField]float[] lanes;
     int lane = 1;
-    [SerializeField] int hp;
+    [SerializeField] float hp;
     int score = 0;
+    [SerializeField] TextMeshProUGUI _tmp;
+    [SerializeField] Slider _slider;
 
     public FlickGesture flickGesture;
     private void OnEnable()
@@ -29,12 +30,19 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        score = 0;
         _rb = GetComponent<Rigidbody>();
+        _tmp.GetComponents<TextMeshProUGUI>();
+        _slider.GetComponent<Slider>();
+        _slider.maxValue = hp;
     }
 
     void FixedUpdate()
     {
         _rb.velocity = new Vector3(0, 0, 1) * _speed;
+        if (hp < _slider.maxValue) hp += Time.deltaTime;
+        _tmp.text = $"Score:{score}";
+        _slider.value = hp;
     }
 
     public void Damage(int _damage)
@@ -61,5 +69,6 @@ public class Player : MonoBehaviour
         if (move < 0) lane--;
         else if (move > 0) lane++;
         gameObject.transform.position = new Vector3(lanes[lane], gameObject.transform.position.y, gameObject.transform.position.z);
+        hp -= _slider.maxValue/10;
     }
 }
