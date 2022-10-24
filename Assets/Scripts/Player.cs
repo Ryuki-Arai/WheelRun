@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     [SerializeField] Slider _slider;
 
     public FlickGesture flickGesture;
+
+    private void Awake()
+    {
+        GameManager.Instance.SetPlayer(this);
+    }
     private void OnEnable()
     {
         flickGesture.Flicked += OnFlicked;
@@ -27,7 +32,6 @@ public class Player : MonoBehaviour
     {
         flickGesture.Flicked -= OnFlicked;
     }
-
     void Start()
     {
         score = 0;

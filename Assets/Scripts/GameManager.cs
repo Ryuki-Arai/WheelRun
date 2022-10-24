@@ -8,6 +8,10 @@ public class GameManager
     public static GameManager Instance => _instance;
     GameManager() { }
 
+    Player _player = default;
+    static public Player Player => _instance._player;
+    public void SetPlayer(Player p) { _player = p; }
+
     static int level = 1;
     public int Level
     {
@@ -24,6 +28,4 @@ public class GameManager
             if(highscore < value) highscore = value;
         }
     }
-
-
 }

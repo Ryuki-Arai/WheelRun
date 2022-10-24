@@ -2644,9 +2644,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100554677}
     - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 8761702160415210841, guid: 297f4c96bd1299a4ebdcf415ccc62ead, type: 3}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 123191172338209990, guid: c747704c1443b264d889053e6cd8ec29, type: 3}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
       propertyPath: _slider
       value: 
       objectReference: {fileID: 2099569040}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 3115998696996369324, guid: a8dbb607c1a09dd4fa03451b18442a46, type: 3}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: obj.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: obj.Array.data[0]
+      value: 
+      objectReference: {fileID: 8761702160415210841, guid: 297f4c96bd1299a4ebdcf415ccc62ead, type: 3}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: obj.Array.data[1]
+      value: 
+      objectReference: {fileID: 123191172338209990, guid: c747704c1443b264d889053e6cd8ec29, type: 3}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: obj.Array.data[2]
+      value: 
+      objectReference: {fileID: 3115998696996369324, guid: a8dbb607c1a09dd4fa03451b18442a46, type: 3}
     - target: {fileID: 4338211288002875318, guid: b163935a989fcc44fbc81702d5935899, type: 3}
       propertyPath: m_Name
       value: Player
