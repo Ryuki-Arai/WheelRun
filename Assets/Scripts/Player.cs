@@ -15,8 +15,10 @@ public class Player : MonoBehaviour
     [SerializeField] float hp;
     int score = 0;
     [SerializeField] TextMeshProUGUI _tmp;
+    [SerializeField] TextMeshProUGUI _tmpHp;
     [SerializeField] Slider _slider;
-
+    [SerializeField] int flickDamage;
+ 
     public FlickGesture flickGesture;
 
     private void Awake()
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
         score = 0;
         _rb = GetComponent<Rigidbody>();
         _tmp.GetComponents<TextMeshProUGUI>();
+        _tmpHp.GetComponents<TextMeshProUGUI>();
         _slider.GetComponent<Slider>();
         _slider.maxValue = hp;
     }
@@ -45,19 +48,18 @@ public class Player : MonoBehaviour
     {
         _rb.velocity = new Vector3(0, 0, 1) * _speed;
         if (hp < _slider.maxValue) hp += Time.deltaTime;
-        _tmp.text = $"Score:{score}";
         _slider.value = hp;
+        _tmpHp.text = ((int)(hp)).ToString();
+        _tmp.text = $"Score:{score}";
     }
 
     public void Damage(int _damage)
     {
-        Debug.Log("Damage");
         hp -= _damage;
     }
 
     public void ScoreUP(int _score)
     {
-        Debug.Log("ScoreUP");
         score += _score;
     }
 
@@ -73,6 +75,6 @@ public class Player : MonoBehaviour
         if (move < 0) lane--;
         else if (move > 0) lane++;
         gameObject.transform.position = new Vector3(lanes[lane], gameObject.transform.position.y, gameObject.transform.position.z);
-        hp -= _slider.maxValue/10;
+        hp -= flickDamage;
     }
 }
