@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnerSet : MonoBehaviour
 {
     [SerializeField] int spawner;
+    [SerializeField] int distance;
     string[] dir = {"L","C","R" };
     float[] posX = { -2f, 0f, 2f };
     void Start()
@@ -15,7 +16,7 @@ public class SpawnerSet : MonoBehaviour
             {
                 var go = new GameObject($"Point{j}{dir[i]}");
                 go.transform.parent = transform;
-                go.transform.position = new Vector3(posX[i], 0.1f, j * 20 + 20);
+                go.transform.position = new Vector3(posX[i], 0.1f, j * distance + distance);
             }
         }
     }
