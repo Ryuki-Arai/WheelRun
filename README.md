@@ -32,4 +32,4 @@
   * それぞれのレーンにコインを1mおきに並べつつ、適当(完全ランダムでもいい)なコインを障害物や敵に挿げ替える
 
 ## サクッと作ってみた
-<img height="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/WheelRun/blob/main/README_Picture/Screen_Recording_20221020_151423_Unity-Remote-5.gif"> 
+<img height="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/WheelRun/blob/main/README_Picture/Screen_Recording_20221107_114253_Unity-Remote-5.gif"> 
