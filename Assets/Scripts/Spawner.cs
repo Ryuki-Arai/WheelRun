@@ -16,12 +16,12 @@ public class Spawner : MonoBehaviour
     
     void Start()
     {
-        //for(int i = 0; i < spawnPos.Length; i++)
-        //{
-        //    var x = Random.Range(0,100);
-        //    if (x > 80) Instantiate<GameObject>(obstacle, spawnPos[i]);
-        //    else if (x > 50) Instantiate<GameObject>(enemy, spawnPos[i]);
-        //    else Instantiate<GameObject>(coin, spawnPos[i]);
-        //}
+        for (int i = 0; i < spawnPos.Length; i++)
+        {
+            for (int j = 0; j < spawnPos[i].linePos.Length; j++)
+            {
+                Instantiate<GameObject>(coin, spawnPos[i].linePos[j]);
+            }
+        }
     }
 }
