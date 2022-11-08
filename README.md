@@ -3,7 +3,9 @@
 **[NOKIAのCM](https://www.youtube.com/watch?v=Ir5fZZOkmRs)に出てくるみたいなタイヤが走る新タイプのゲーム**
 
 ## 開発環境
-* Unity
+* Unity 2021.3.11f1
+  * Cinemachine
+  * TextMeshPro
 * Visual Sutdio 2022
 
 ## ゲームの内容
@@ -33,3 +35,9 @@
 
 ## サクッと作ってみた
 <img height="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/WheelRun/blob/main/README_Picture/Screen_Recording_20221107_114253_Unity-Remote-5.gif"> 
+
+## 追加実装
+* **車輪の成長**  
+  * 車輪の強さを保有するパラメータの作成
+  * 準じた敵のパラメータの作成 (敵を倒すギミックに繋げる)
+  * 車輪を成長させるアイテムの作成
