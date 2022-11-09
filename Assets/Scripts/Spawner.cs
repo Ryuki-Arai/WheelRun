@@ -18,15 +18,16 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < spawnPos.Length; i++)
         {
-            if((i + 1) % 5 == 0)
+            var rand = Random.Range(0, spawnPos[i].linePos.Length);
+            if ((i + 1) % 5 == 0)
             {
                 for (int j = 0; j < spawnPos[i].linePos.Length; j++)
                 {
-                    Instantiate<GameObject>(enemy, spawnPos[i].linePos[j]);
+                    if (j == rand) Instantiate<GameObject>(coin, spawnPos[i].linePos[j]);
+                    else Instantiate<GameObject>(enemy, spawnPos[i].linePos[j]);
                 }
                 continue;
             }
-            var rand = Random.Range(0,spawnPos[i].linePos.Length);
             for (int j = 0; j < spawnPos[i].linePos.Length; j++)
             {
                 if(j == rand) Instantiate<GameObject>(obstacle, spawnPos[i].linePos[j]);

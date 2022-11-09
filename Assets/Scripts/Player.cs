@@ -8,14 +8,16 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] int level = 0;
     [SerializeField] int _speed = 5;
     Rigidbody _rb;
     [SerializeField]float[] lanes;
     int lane = 1;
     [SerializeField] float hp;
     int score = 0;
-    [SerializeField] TextMeshProUGUI _tmp;
-    [SerializeField] TextMeshProUGUI _tmpHp;
+    [SerializeField] TMP_Text _tmp;
+    [SerializeField] TMP_Text _tmpHp;
+    [SerializeField] TMP_Text _tmpLevel;
     [SerializeField] Slider _slider;
     [SerializeField] int flickDamage;
  
@@ -37,9 +39,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         score = 0;
+        level = 1;
         _rb = GetComponent<Rigidbody>();
-        _tmp.GetComponents<TextMeshProUGUI>();
-        _tmpHp.GetComponents<TextMeshProUGUI>();
+        _tmp.GetComponents<TMP_Text>();
+        _tmpHp.GetComponents<TMP_Text>();
+        _tmpLevel.GetComponent<TMP_Text>();
         _slider.GetComponent<Slider>();
         _slider.maxValue = hp;
     }
@@ -47,7 +51,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         _rb.velocity = new Vector3(0, 0, 1) * _speed;
-        if (hp < _slider.maxValue) hp += Time.deltaTime;
+        if (hp < _slider.maxValue) hp += (Time.deltaTime*10);
         _slider.value = hp;
         _tmpHp.text = ((int)(hp)).ToString();
         _tmp.text = $"Score:{score}";
@@ -61,6 +65,11 @@ public class Player : MonoBehaviour
     public void ScoreUP(int _score)
     {
         score += _score;
+    }
+
+    public void LevelUP()
+    {
+        level++;
     }
 
     private void OnFlicked(object sender, EventArgs e)

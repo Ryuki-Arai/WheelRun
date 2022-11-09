@@ -437,7 +437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score:00000
+  m_text: 00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3918,7 +3918,7 @@ MonoBehaviour:
     - {fileID: 7829880581670383684}
   coin: {fileID: 7198493481841204166, guid: 297f4c96bd1299a4ebdcf415ccc62ead, type: 3}
   enemy: {fileID: 8733530369951411124, guid: c747704c1443b264d889053e6cd8ec29, type: 3}
-  obstacle: {fileID: 7198493481841204166, guid: 297f4c96bd1299a4ebdcf415ccc62ead, type: 3}
+  obstacle: {fileID: 6936025873521019208, guid: a8dbb607c1a09dd4fa03451b18442a46, type: 3}
 --- !u!114 &3101995796735501345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4681,6 +4681,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 123191172338209990, guid: c747704c1443b264d889053e6cd8ec29, type: 3}
+    - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
+      propertyPath: power
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4338211288002875314, guid: b163935a989fcc44fbc81702d5935899, type: 3}
       propertyPath: _speed
       value: 20
