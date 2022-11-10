@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
         _slider.value = hp;
         _tmpHp.text = ((int)(hp)).ToString();
         _tmp.text = $"Score:{score}";
+        _tmpLevel.text = level.ToString();
     }
 
     public void Damage(int _damage)
@@ -67,9 +68,9 @@ public class Player : MonoBehaviour
         score += _score;
     }
 
-    public void LevelUP()
+    public void LevelUP(int _level)
     {
-        level++;
+        level+=_level;
     }
 
     private void OnFlicked(object sender, EventArgs e)
