@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] int level = 0;
+    public int Level => level;
     [SerializeField] int _speed = 5;
     Rigidbody _rb;
     [SerializeField]float[] lanes;
